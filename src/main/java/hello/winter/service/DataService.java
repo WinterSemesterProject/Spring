@@ -18,7 +18,12 @@ public class DataService {
         Connection con = DriverManager.getConnection(url, id, pw);
         Statement stmt = con.createStatement();
         log.info(sql);
-        ResultSet rs = stmt.executeQuery(sql);
-        return rs;
+        try {
+            ResultSet rs = stmt.executeQuery(sql);
+            return rs;
+        } catch (Exception e) {
+            log.info("해당 데이터 존재하지 않음");
+            throw e;
+        }
     }
 }
