@@ -1,11 +1,14 @@
 package hello.winter.repository;
 
 import hello.winter.domain.DTO;
+import org.springframework.stereotype.Repository;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+@Repository
 public class DataRepository {
     List<DTO> dataList = new ArrayList<>();
 

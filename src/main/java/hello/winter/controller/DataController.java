@@ -18,7 +18,7 @@ import java.util.List;
 @Slf4j
 public class DataController {
     @GetMapping("/{db}/{item}")
-    public List<DTO> CPU1(@PathVariable String db, @PathVariable String item) throws SQLException, ClassNotFoundException {
+    public List<DTO> dataInfo(@PathVariable String db, @PathVariable String item) throws SQLException, ClassNotFoundException {
         DataRepository dataRepository = new DataRepository();
         DataService dataService = new DataService();
         ResultSet rs = dataService.findResultSet(db, item);
